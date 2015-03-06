@@ -13,6 +13,7 @@ v0.0.4 Minor changes to js to clean up code. New instructions
 Todo:
 -----------------------------
 Add iterator to handle more than one group of TV Sets.
+I need an event that triggers this part on page load if the TVSet is located on the first tab
 
 Usage:
 ------------------------------
