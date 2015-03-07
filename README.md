@@ -10,9 +10,9 @@ Each type of header needs one or more TVs but you only want to show the TVs need
 Each type of header will use a different chunk for templating.
 
 
-# Setup
+# Example Setup
 
-At tthe moment you have to manually setup the plugin. Just follow the steps below.
+At tHe Moment you have to manualy setup the plugin. Just follow the steps below.
 
 ## Step 1 - Create your header TVs
 
