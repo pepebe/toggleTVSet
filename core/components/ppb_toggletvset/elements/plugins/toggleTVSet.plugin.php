@@ -39,7 +39,6 @@ Usage:
 
 $selectTV = "tv11"; // Add the id of your Header Single Select Here
 $tab = 'modx-panel-resource-tv';
-$tab = 'modx-resource-settings';
 /* No changes below this line. */
 
 $js = "
