@@ -63,5 +63,18 @@ Good: "Jumbotron==1,2,3"
 2. Modify the selectTV variable in line 40 to match the id of your Header Select TV.
 3. Done.
 
+# Changelog
 
+<?php
+/*
+toggleTVSet plugin for modx v0.0.4 (2015-03-06 10:31)
+info@pepebe.de
+
+Changelog:
+-----------------------------
+v0.0.1 Initial release
+v0.0.2 Corrected cut and paste mishap
+v0.0.3 More cut and paste mishap (don't work in multiple tabs...)
+v0.0.4 Minor changes to js to clean up code. New instructions
+v0.0.5 Completely recoded the plugin. Should work now on any tab.
 

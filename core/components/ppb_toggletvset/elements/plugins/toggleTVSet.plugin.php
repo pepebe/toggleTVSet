@@ -1,48 +1,24 @@
 <?php
-/*
-toggleTVSet plugin for modx v0.0.4 (2015-03-06 10:31)
-info@pepebe.de
 
-Changelog:
------------------------------
-v0.0.1 Initial release
-v0.0.2 Corrected cut and paste mishap
-v0.0.3 More cut and paste mishap (don't work in multiple tabs...)
-v0.0.4 Minor changes to js to clean up code. New instructions
+/* v0.0.5*/
 
-Todo:
------------------------------
-Add iterator to handle more than one group of TV Sets.
-I need an event that triggers this part on page load if the TVSet is located on the first tab
-
-Usage:
-------------------------------
-1. Add plugin to modx manager.
-2. Check OnDocFormPreRender Event
-3. Setup Header TVs (Example):
-  * Standard_Headline (4)
-  * Jumbotron_BG_Color (5)
-  * Jumbotron_BG_Image (6)
-  * Jumbotron_RTE (7)
-  * Carousel_MIGX_TV (8)
-  * Cover_Background_Image (9)
-  * Cover_RTE (10)
-4. Setup Select TV used for picking header type:
-  * Name: Header
-  * Type: Single Select TV
-  * Input Option Values: "Standard==4||Carousel==8||Cover==9,10||Jumbotron==5,6,7"
-  * Allow blank: false
-  * Enable typeahead: false
-  * Move it to the very top of your List of TVs
-5. Done!
+/* 
+    Extjs Documentation
+    http://docs-origin.sencha.com/extjs/3.4.0/#!/api/Ext.Panel 
+    http://docs-origin.sencha.com/extjs/3.4.0/#!/api/Ext.TabPanel
 */
 
-$selectTV = "tv11"; // Add the id of your Header Single Select Here
-$tab = 'modx-panel-resource-tv';
+/* Make changes to this part */
+$debug = 'false';
+$selectTV = 11; // Add the id of your Header Single Select Here
+
 /* No changes below this line. */
+
+$selectTV = 'tv'.$selectTV;
 
 $js = "
     Ext.onReady(function () {
+        var debug = ".$debug.";
 
         function toggleTVSet(tvs,displayValue){
             for(x in tvs){
@@ -54,18 +30,40 @@ $js = "
                     }
                 }
             }
-            console.log('toggleTVSet triggered tvs(' + tvs + ') set to display: ' + displayValue );
+            if(debug){
+                console.log('toggleTVSet triggered tvs(' + tvs + ') set to display: ' + displayValue );
+            }
         }
     
-        Ext.getCmp('modx-resource-tabs').on('tabchange',function(e){
+  
         
-            console.log('tab event');
-            console.log(e.getActiveTab().id);
-                
-            if(e.getActiveTab().id == '".$tab."'){
+        if(debug){
+            var mpr = Ext.getCmp('modx-panel-resource');
+            var mrt = Ext.getCmp('modx-resource-tabs');
+            Ext.util.Observable.capture(mpr, function(evname) {console.log(evname, arguments);});
+            Ext.util.Observable.capture(mrt, function(evname) {console.log(evname, arguments);});
+        }
+        
+        /*
+        Ext.getCmp('modx-panel-resource').on('afterlayout',function(e){
+            //console.log('panel afterlayout');
+        });
+        */
+        
 
-                var selectTV = Ext.getCmp('".$selectTV."');
-                
+        
+        Ext.getCmp('modx-resource-tabs').on('tabchange',function(e){
+            if(debug){
+                console.log(e.getActiveTab().id);
+            }
+        });
+        
+        Ext.getCmp('modx-resource-tabs').on('afterlayout',function(e){
+        
+            var selectTV = Ext.getCmp('".$selectTV."');
+            
+            if(selectTV){
+            
                 var hideTVs = selectTV.store.data.keys.join().split(',')
                 var showTVs = selectTV.getValue().split(',')
                 
@@ -84,7 +82,12 @@ $js = "
         });
     });
 ";
-
 $modx->regClientStartupHTMLBlock('<script>'.$js.'</script>');
+
+$css = "
+    /* Some fixes for css bugs in manager*/
+    #modx-resource-settings .modx-tv  {padding-left: 0!important}
+";
+$modx->regClientStartupHTMLBlock('<style>'.$css.'</style>');
 
 return;
