@@ -63,15 +63,56 @@ Good: "Jumbotron==1,2,3"
 2. Modify the selectTV variable in line 40 to match the id of your Header Select TV.
 3. Done.
 
+# getTVLabel.snippet.php
+
+You have a selectTV with these input options: "Standard==4||Carousel==8||Cover==9,10||Jumbotron==5,6,7"
+
+In your template you want to use 
+
+```
+[[$[[*selectTV]]]]
+```
+
+to call 
+
+```
+* [[$Standard]] or [[$Carousel]].
+```
+
+In this case you need the selected label instead of the current value.
+
+This snippet will retrieve the label of the value you have selected.
+
+# getTVNames.snippet.php
+
+Output filter to retrieve names of TVs from a list of TV ids
+
+Idea:
+Use it with toogleTVSet plugin (included below) to handel different template options.
+
+Usage:
+This is a simple output filter. 
+You can use it in snippets like getResources or pdoTools to add TVs to your query:
+
+Example:
+```
+&includeTVs=`[[*Header:getTVNames]]`
+```
+
+Usage:
+------------------------------------------------------
+If your TV is not prefixed, use the snippet like this:
+```
+[[*Header:getTVLabel]]
+```
+
+If you are working in getResources/pdoResources, etc and your TV is prefixed (example [[+tv.Header]], etc.), use it like this:
+```
+[[+tv.Header:getTVLabel=`tv.`]]
+```
+
 # Changelog
 
-<?php
-/*
-toggleTVSet plugin for modx v0.0.4 (2015-03-06 10:31)
-info@pepebe.de
-
-Changelog:
------------------------------
 v0.0.1 Initial release
 v0.0.2 Corrected cut and paste mishap
 v0.0.3 More cut and paste mishap (don't work in multiple tabs...)
