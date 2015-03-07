@@ -9,9 +9,9 @@ You want to be able to pick one of four different headers.
 Each type of header needs one or more TVs but you only want to show the TVs needed for the selected type of header.
 Each type of header will use a different chunk for templating.
 
-** Warning:  At the moment this plugin only works with TVs displayed on the TV tab.
+**Warning:  At the moment this plugin only works with TVs displayed on the TV tab.
 If you are using form customization to move your TVs to another tab, this plugin will not work.
-A later version will be more versatile. **
+A later version will be more versatile.**
 
 ---
 
@@ -59,7 +59,7 @@ Good: "Jumbotron==1,2,3"
 
 ## Step 2 - Add toogleTVSet to your MODx Manager.
 
-1. Copy the code found in ** core/components/ppb_toggletvset/elements/plugins/toggletvset.plugin.php ** into to a new plugin and trigger it on ** OnDocFormPreRender **.
+1. Copy the code found in **core/components/ppb_toggletvset/elements/plugins/toggletvset.plugin.php** into to a new plugin and trigger it on **OnDocFormPreRender**.
 2. Modify the selectTV variable in line 40 to match the id of your Header Select TV.
 3. Done.
 
