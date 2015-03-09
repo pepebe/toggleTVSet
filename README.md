@@ -12,7 +12,7 @@ Each type of header will use a different chunk for templating.
 
 # Example Setup
 
-At tHe Moment you have to manualy setup the plugin. Just follow the steps below.
+At the moment you have to manualy setup the plugin. Just follow the steps below.
 
 ## Step 1 - Create your header TVs
 
@@ -108,9 +108,13 @@ If you are working in getResources/pdoResources, etc and your TV is prefixed (ex
 
 # Changelog
 
-v0.0.1 Initial release
-v0.0.2 Corrected cut and paste mishap
-v0.0.3 More cut and paste mishap (don't work in multiple tabs...)
-v0.0.4 Minor changes to js to clean up code. New instructions
-v0.0.5 Completely recoded the plugin. Should work now on any tab.
+* v0.0.1 Initial release
+* v0.0.2 Corrected cut and paste mishap
+* v0.0.3 More cut and paste mishap (don't work in multiple tabs...)
+* v0.0.4 Minor changes to js to clean up code. New instructions
+* v0.0.5 Completely recoded the plugin. The plugin will work now on any tab.
+
+# 2do
+
+* Multiple sets of TVs that can be toggled.
 
