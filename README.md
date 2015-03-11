@@ -61,7 +61,7 @@ Good: "Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12"
 2. Modify the selectTV variable in line 40 to match the id of your Header Select TV.
 3. Done.
 
-# getTVNames.snippet.php
+# getTVLabel.snippet.php
 
 This snippet will retrieve the label of the selected TV value. 
 
@@ -83,10 +83,10 @@ As the values of your Tv only show the ids of the involved TVs, you want to retu
 
 Example:
 ```
-[[*selectTV:getTVNames]]
+[[*selectTV:getTVLabel]]
 ```
 
-# getTVLabel.snippet.php
+# getTVNames.snippet.php
 
 Output filter to retrieve names of TVs from a list of TV ids.
 
@@ -95,19 +95,19 @@ You can use it in snippets like getResources or pdoTools to add TVs to your quer
 
 Example:
 ```
-&includeTVs=`[[*selectTV:getTVLabel]]`
+&includeTVs=`[[*selectTV:getTVNames]]`
 ```
 
 Advanced options:
 ------------------------------------------------------
 If your TV is not prefixed, use the snippet like this:
 ```
-[[+selectTV:getTVLabel]]
+[[+selectTV:getTVNames]]
 ```
 
 If you are working in getResources/pdoResources, etc and your TV is prefixed (example [[+tv.selectTV]], etc.), use it like this:
 ```
-[[+tv.selectTV:getTVLabel=`tv.`]]
+[[+tv.selectTV:getTVNames=`tv.`]]
 ```
 
 # Changelog
