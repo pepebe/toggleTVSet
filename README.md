@@ -1,18 +1,21 @@
 # toggleTVSet
-Toggle a set of TVs depending on the value of a Single Select TV
+Toggle visibility of a set of TVs depending on the value of a Single Select TV
 
 This plugin will toggle the visibility of a number of TVs depending on the value of a select TV.
 
 **Use case**
 
-You want to be able to pick one of four different headers.
-Each type of header needs one or more TVs but you only want to show the TVs needed for the selected type of header.
-Each type of header will use a different chunk for templating.
+In one of your templates you want to be able to select one of four different headers.
 
+Each type of header needs one or more TVs but you only want to show the TVs needed for the selected type of header.
+
+Inside your template you want to use different chunks for templating.
+
+** Note: ** At the moment you have to manualy setup the plugin. Just follow the steps below.
 
 # Example Setup
 
-At the moment you have to manualy setup the plugin. Just follow the steps below.
+You have four different headers (Simple, Jumbotron,Carousel,Cover). For each one of them you use different TVs.
 
 ## Step 1 - Create your header TVs
 
@@ -48,8 +51,8 @@ Give each input option a label and add the ids of the TVs used as comma separate
 ** Note: **  Be careful not to add empty spaces inside the value!
 
 ```
-Bad: "Jumbotron== 1, 2, 3 "
-Good: "Jumbotron==1,2,3"
+Bad: "Standard==6||Jumbotron== 7 , 8, 9 ||Carousel==10||Cover==11,12"
+Good: "Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12"
 ```
 
 ## Step 2 - Add toogleTVSet to your MODx Manager.
