@@ -77,36 +77,37 @@ to call
 * [[$Standard]] or [[$Carousel]].
 ```
 
-In this case you need the selected label instead of the current value.
+As the values of your Tv only show the ids of the involved TVs, you want to return the label of the current value instead.
+
+Example:
+```
+[[*selectTV:getTVLabel]]
+```
 
 This snippet will retrieve the label of the value you have selected.
 
 # getTVNames.snippet.php
 
-Output filter to retrieve names of TVs from a list of TV ids
+Output filter to retrieve names of TVs from a list of TV ids.
 
-Idea:
-Use it with toogleTVSet plugin (included below) to handel different template options.
-
-Usage:
 This is a simple output filter. 
-You can use it in snippets like getResources or pdoTools to add TVs to your query:
+You can use it in snippets like getResources or pdoTools to add TVs to your query.
 
 Example:
 ```
-&includeTVs=`[[*Header:getTVNames]]`
+&includeTVs=`[[*selectTV:getTVNames]]`
 ```
 
-Usage:
+Advanced options:
 ------------------------------------------------------
 If your TV is not prefixed, use the snippet like this:
 ```
-[[*Header:getTVLabel]]
+[[+selectTV:getTVLabel]]
 ```
 
-If you are working in getResources/pdoResources, etc and your TV is prefixed (example [[+tv.Header]], etc.), use it like this:
+If you are working in getResources/pdoResources, etc and your TV is prefixed (example [[+tv.selectTV]], etc.), use it like this:
 ```
-[[+tv.Header:getTVLabel=`tv.`]]
+[[+tv.selectTV:getTVLabel=`tv.`]]
 ```
 
 # Changelog
