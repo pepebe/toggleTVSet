@@ -83,7 +83,8 @@ As the values of your Tv only show the ids of the involved TVs, you want to retu
 
 Example:
 ```
-[[*selectTV:getTVLabel]]
+[[$[[*selectTV]]]] returns [[$4]]
+[[$[[*selectTV:getTVLabel]]]] returns [[$Standard]] 
 ```
 
 # getTVNames.snippet.php
