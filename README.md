@@ -3,6 +3,10 @@ Toggle visibility of a set of TVs depending on the value of a Single Select TV
 
 This plugin will toggle the visibility of a number of TVs depending on the value of a select TV.
 
+See this quickcast for a short introduction:
+
+http://quick.as/dvdkfjwo
+
 **Use case**
 
 In one of your templates you want to be able to select one of four different headers.
