@@ -47,7 +47,7 @@ You have four different headers (Simple, Jumbotron,Carousel,Cover). For each one
 Header (13) - Single Select TV
 * Input Option Values:"Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12"
 * Allow Blank: false
-* Default: 4
+* Default: 6
 * Enable typeahead: false
 
 Give each input option a label and add the ids of the TVs used as comma separated values.
@@ -62,7 +62,7 @@ Good: "Standard==6||Jumbotron==7,8,9||Carousel==10||Cover==11,12"
 ## Step 2 - Add toogleTVSet to your MODx Manager.
 
 1. Copy the code found in **core/components/ppb_toggletvset/elements/plugins/toggletvset.plugin.php** into to a new plugin and trigger it on **OnDocFormPreRender**.
-2. Modify the selectTV variable in line 40 to match the id of your Header Select TV.
+2. Modify the selectTV variable in line 12 to match the id of your Header Select TV.
 3. Done.
 
 # getTVLabel.snippet.php
